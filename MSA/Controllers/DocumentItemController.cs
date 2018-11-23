@@ -168,9 +168,14 @@ namespace MSA.Controllers
                     docItem.UserId = doc.UserId;
                     docItem.TypeDoc = GetFileExtention(doc.Image.FileName);
 
-                    System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                    docItem.Height = image.Height.ToString();
-                    docItem.Width = image.Width.ToString();
+                    //if (!(Request.ContentType == "application/pdf"))
+                        
+                    //{
+                    //     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+                    //     docItem.Height = image.Height.ToString();
+                    //     docItem.Width = image.Width.ToString();
+                    //}
+
                     docItem.Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
                     docItem.Uploaded = DateTime.Now.ToString();
 
